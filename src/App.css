@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +12,12 @@
   --dark2: #3c2a21;
   --light1: #d5cea3;
   --light2: #e5e5cb;
+}
+
+.fonts {
+  --sub-title: 'Gentium Book Basic', serif;
+}
+
+body {
+  background-color: #181818;
 }
