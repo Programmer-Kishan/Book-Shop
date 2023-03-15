@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import Greeting from './Greeting';
 
 import classes from './Navbar.module.css'
 
@@ -12,6 +14,8 @@ const Navbar = (props) => {
             <h2>
                 The Book Shop
             </h2>
+            {props.isLogin ? <Greeting name="Kishan"/> : ''}
+            
         </nav>
     </>
   )

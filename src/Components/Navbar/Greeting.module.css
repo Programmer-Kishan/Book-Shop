@@ -1,0 +1,7 @@
+
+.greet {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 3em;
+    font-family: var(--small-heading);
+}
