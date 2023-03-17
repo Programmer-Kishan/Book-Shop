@@ -1,0 +1,8 @@
+
+.login {
+    max-width: 4000px;
+    width: calc(40% - 7em);
+    margin: 5em auto;
+    padding: 1.4rem 1rem;
+    text-align: center;
+}

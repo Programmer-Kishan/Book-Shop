@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Mukta:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -18,6 +19,8 @@
 .fonts {
   --sub-title: 'Gentium Book Basic', serif;
   --small-heading: 'Poppins', sans-serif;
+  --small-title: 'Inter', sans-serif;
+  --placeholder: 'Mukta', sans-serif;
 }
 
 body {
