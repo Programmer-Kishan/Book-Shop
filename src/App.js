@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <>
