@@ -14,7 +14,7 @@ const Navbar = (props) => {
             <h2>
                 The Book Shop
             </h2>
-            {props.isLogin ? <Greeting name="Kishan"/> : ''}
+            {props.isLogin ? <Greeting name={props.greetName} /> : ''}
             
         </nav>
     </>

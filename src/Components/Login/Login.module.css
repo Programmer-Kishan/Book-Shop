@@ -17,3 +17,8 @@
     font-family: var(--title);
     color: var(--dark2);
 }
+
+.form-btn {
+    background-color: var(--dark2);
+    color: var(--light1);
+}

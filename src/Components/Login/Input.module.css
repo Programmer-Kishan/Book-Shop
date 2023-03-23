@@ -14,3 +14,12 @@
     outline: none;
     border: 2px solid var(--dark1);
 }
+
+.input-field:focus {
+    outline: none;
+    background-color: #ffa148a6;
+}
+
+.input-field.invalid {
+    background-color: #ff6767;
+}
