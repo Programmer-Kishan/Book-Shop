@@ -21,4 +21,5 @@
 .form-btn {
     background-color: var(--dark2);
     color: var(--light1);
+    margin: 20px auto;
 }

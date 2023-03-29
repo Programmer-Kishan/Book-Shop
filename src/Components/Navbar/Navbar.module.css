@@ -13,3 +13,36 @@
     font-size: 2.5rem;
     font-weight: bold;
 }
+
+.nav-btn {
+    background-color: var(--light1);
+    color: var(--dark1);
+}
+
+.login-info {
+    min-width: 400px;
+    width: 43%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1430px) {
+    .navbar {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-info {
+        width: 55%;
+        margin: 10px auto
+    }
+}
+
+@media only screen and (max-width: 1210px) {
+    .login-info {
+        display: flex;
+        flex-direction: column;
+    }
+}
