@@ -6,7 +6,7 @@ import Button from '../Helper/Button';
 import classes from './Navbar.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
 
@@ -23,7 +23,7 @@ const Navbar = (props) => {
                               </Button>
                                 : 
               ''}
-              {props.isLogin ? <Button type="button" className={classes["nav-btn"]}>Logout</Button>: ''}
+              {props.isLogin ? <Button type="button" className={classes["nav-btn"]} onClick={props.onLogout}>Logout</Button>: ''}
             </div>
         </nav>
     </>

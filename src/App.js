@@ -28,13 +28,19 @@ function App() {
     }
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem('fname');
+    setIsLoggedIn(false);
+  }
+
   const nameHandler = (fname) => {
     setName(fname);
   } 
 
   return (
     <div className="dark-scheme fonts">
-      <Navbar isLogin={isLoggedIn} greetName={name} />
+      <Navbar isLogin={isLoggedIn} greetName={name} onLogout={handleLogout} />
       {!isLoggedIn ? <Login onLogin={handleLogin} greetNameHandler={nameHandler}/> : ''}
     </div>
   );
