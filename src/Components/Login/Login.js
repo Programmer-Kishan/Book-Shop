@@ -1,8 +1,10 @@
-import React, { useState, useRef, useReducer } from 'react'
+import React, { useContext, useRef, useReducer } from 'react'
 
 import Card from "../Helper/Card";
 import Button from "../Helper/Button";
 import Input from "./Input.js";
+
+import AuthContext from "../../store/auth-context";
 
 import classes from './Login.module.css';
 
@@ -25,7 +27,7 @@ const emailReducer = (state, action) => {
 }
 
 
-const Login = (props) => {
+const Login = () => {
 
   const fnameRef = useRef();
   const lnameRef = useRef();
@@ -34,17 +36,19 @@ const Login = (props) => {
   const [fnameState, dispatchFname] = useReducer(nameReducer, {
     value: '',
     isValid: null
-  })
+  });
 
   const [lnameState, dispatchLname] = useReducer(nameReducer, {
     value: '',
     isValid: null
-  })
+  });
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: '',
     isValid: null
-  })
+  });
+
+  const ctx = useContext(AuthContext);
 
   const fnameChangeHandler = (event) => {
     dispatchFname({type: 'USER_INPUT', val: event.target.value});
@@ -74,8 +78,8 @@ const Login = (props) => {
     e.preventDefault();
 
     if (fnameState.isValid && lnameState.isValid && emailState.isValid) {
-      props.greetNameHandler(fnameRef.current.value);
-      props.onLogin(fnameRef.current.value, lnameRef.current.value, emailRef.current.value)
+      ctx.onNameChange(fnameRef.current.value);
+      ctx.onLogin(fnameRef.current.value, lnameRef.current.value, emailRef.current.value)
     } else {
       console.log("Error in inputs");
     }
