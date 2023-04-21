@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const AuthContext = React.createContext({
     isLoggedIn: false,
-    onLogin: (fname, lname, email) => {},
+    onLogin: (a, b, c) => {},
     onLogout: () => {},
     greetName: '',
     onNameChange: () => {}

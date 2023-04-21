@@ -1,8 +1,8 @@
 
 .book-card {
-    margin: 50px 0 0 50px;
     width: 280px;
     height: 350px;
+    margin: 2em;
     /* backface-visibility: hidden; */
 }
 
@@ -49,7 +49,9 @@
 }
 
 .book-back h2 {
-    font-size: 3rem;
+    width: 95%;
+    font-size: 2.5rem;
+    text-align: center;
     transform: translateZ(100px);
 }
 
@@ -60,4 +62,21 @@
 
 .book-btn {
     background-color: var(--fa-sand);
+}
+
+.config-btn {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.book__config-btn {
+    width: 23%;
+    border-radius: 100%;
+    padding: 0.1em;
+    font-size: 1.8rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }

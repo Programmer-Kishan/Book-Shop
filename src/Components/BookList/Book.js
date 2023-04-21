@@ -1,22 +1,46 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 
 import classes from './Book.module.css';
 
 import Button from '../Helper/Button';
+import BookContext from '../../store/book-context';
 
-import Harry1 from '../../images/Harry1.jpg';
+const ProductConfig = (props) => {
+  return (
+    <div className={classes["config-btn"]}>
+      <button type='button' className={classes["book__config-btn"]}>+</button>
+      <p>10</p>
+      <button type='button' className={classes["book__config-btn"]}>-</button>
+    </div>
+  )
+}
 
-const Book = () => {
+const Book = (props) => {
+
+  const [isAdded, setIsAdded] = useState(false)
+
+  const ctx = useContext(BookContext);
+
+  const handleClick = () => {
+    ctx.onClick(props.id);
+    setIsAdded(true)
+  }
+
   return (
     <div className={classes['book-card']}>
       <div className={classes['book-content']}>
         <div className={classes['book-front']}>
-          <img src={Harry1} alt="book image" />
+          <img src={props.link} alt="book image" />
         </div>
         <div className={classes['book-back']}>
-          <h2>Harry Potter</h2>
-          <p>₹500</p>
-          <Button type='submit' className={classes['book-btn']}>Add to cart</Button>
+          <h2>{props.title}</h2>
+          <p>₹{props.price}</p>
+          {!isAdded ? 
+            <Button type='submit' className={classes['book-btn']} onClick={handleClick}>Add to cart</Button>
+            :
+            <ProductConfig />
+          }
+          {/* <ProductConfig /> */}
         </div>
       </div>    
     </div>

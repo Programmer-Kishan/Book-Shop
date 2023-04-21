@@ -16,47 +16,57 @@ const data = [
         link: Harry1,
         title: "Harry Potter and Philosopher's Stone",
         price: 350,
+        itemAdded: false
     },
     {
         id: 2,
         link: Harry2,
         title: "Harry Potter and Chamber of Secrets",
         price: 450,
+        itemAdded: false
     },
     {
         id: 3,
         link: Harry3,
         title: "Harry Potter and Prisoner of Azkaban",
         price: 550,
+        itemAdded: false
     },
     {
         id: 4,
         link: Harry4,
         title: "Harry Potter and Goblet of Fire",
         price: 600,
+        itemAdded: false
     },
     {
         id: 5,
         link: Harry5,
         title: "Harry Potter and Order of the Phoenix ",
         price: 600,
+        itemAdded: false
     },
     {
         id: 6,
         link: Harry6,
         title: "Harry Potter and Half-Blood Prince ",
         price: 650,
+        itemAdded: false
     },
     {
         id: 7,
         link: Harry71,
         title: "Harry Potter and Deathly Hallows : Part I",
         price: 700,
+        itemAdded: false
     },
     {
-        id: 7,
+        id: 8,
         link: Harry72,
         title: "Harry Potter and Deathly Hallows : Part II",
         price: 750,
+        itemAdded: false
     }
 ]
+
+export default data;
