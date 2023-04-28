@@ -3,29 +3,28 @@ import React, { useState, useContext } from 'react';
 import classes from './Book.module.css';
 
 import Button from '../Helper/Button';
+import ProductConfig from './ProductConfig';
 import BookContext from '../../store/book-context';
-
-const ProductConfig = (props) => {
-  return (
-    <div className={classes["config-btn"]}>
-      <button type='button' className={classes["book__config-btn"]}>+</button>
-      <p>10</p>
-      <button type='button' className={classes["book__config-btn"]}>-</button>
-    </div>
-  )
-}
 
 const Book = (props) => {
 
-  const [isAdded, setIsAdded] = useState(false)
+  const [isAdded, setIsAdded] = useState(false);
 
   const ctx = useContext(BookContext);
 
   const handleClick = () => {
-    ctx.onClick(props.id);
+
+    const selectedBook = {
+      bookId: props.id,
+      title: props.title,
+      price: props.price,
+      quantity: 1
+    }
+
+    ctx.addBook(selectedBook);
     setIsAdded(true)
   }
-
+ 
   return (
     <div className={classes['book-card']}>
       <div className={classes['book-content']}>
@@ -38,7 +37,7 @@ const Book = (props) => {
           {!isAdded ? 
             <Button type='submit' className={classes['book-btn']} onClick={handleClick}>Add to cart</Button>
             :
-            <ProductConfig />
+            <ProductConfig id = {props.id} onRemove = {setIsAdded}/>
           }
           {/* <ProductConfig /> */}
         </div>
