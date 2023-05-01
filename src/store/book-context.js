@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 
 const listReducer = (state, action) => {
     if (action.type === 'add book') {
@@ -25,6 +25,7 @@ const listReducer = (state, action) => {
 
 const BookContext = React.createContext({
     bookList: [],
+    totalBooks: 0,
     onClick: () => {},
     onIncrement: () => {},
     onDecrement: () => {},
@@ -33,31 +34,44 @@ const BookContext = React.createContext({
 
 export const BookContextProvider = (props) => {
 
+    const [totalBooks, setTotalBooks] = useState(0);
+
     const [list, dispatchList] = useReducer(listReducer, []);
 
     const bookClicked = (book) => {
         console.log(book);
-        dispatchList({type: "add book", val: book})
+        dispatchList({type: "add book", val: book});
+        setTotalBooks(prevState => prevState + 1);
+        console.log(totalBooks);
     }
 
     const incrementBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "increment book", index: ind});
+        setTotalBooks(prevState => prevState + 1);
+        console.log(totalBooks);
     }
 
     const decrementBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "decrement book", index: ind});
+        setTotalBooks(prevState => prevState - 1);
+        console.log(totalBooks);
     }
 
     const removeBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "remove book", index: ind});
+        setTotalBooks(prevState => prevState - 1);
+        console.log(totalBooks);
     }
+
+    
 
     return (
         <BookContext.Provider value={{
             bookList: list,
+            totalBooks: totalBooks,
             addBook: bookClicked,
             onIncrement: incrementBook,
             onDecrement: decrementBook,

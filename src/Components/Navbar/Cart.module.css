@@ -1,0 +1,17 @@
+
+.cart-btn {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 2em;
+    background-color: red;
+    top: -5px;
+    right: 0;
+
+    color: #ffd8bf;
+    font-size: 17px;
+}
