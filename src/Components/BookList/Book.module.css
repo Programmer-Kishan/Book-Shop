@@ -4,6 +4,7 @@
     height: 350px;
     margin: 2em;
     /* backface-visibility: hidden; */
+    perspective: 800px;
 }
 
 .book-content {
@@ -31,7 +32,7 @@
 .book-front img {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 1px 1px 6px var(--light2);
 }
 
@@ -43,20 +44,20 @@
     font-family: var(--card-font);
     color: #fff;
     transform: rotateY(180deg);
-    box-shadow: 1px 1px 6px var(--light2);
-    border-radius: 20px;
-    /* backface-visibility: hidden; */
+    /* box-shadow: 1px 1px 6px var(--light2); */
+    border-radius: 5px;
+    backface-visibility: hidden;
 }
 
 .book-back h2 {
-    width: 95%;
-    font-size: 2.5rem;
+    width: 85%;
+    font-size: 2.1rem;
     text-align: center;
     transform: translateZ(100px);
 }
 
 .book-back p {
-    font-size: 2rem;
+    font-size: 1.8rem;
     transform: translateZ(100px);
 }
 
