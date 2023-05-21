@@ -27,10 +27,10 @@ const ProductConfig = (props) => {
     }
 
   return (
-    <div className={classes["config-btn"]}>
-        <button type='button' className={classes["book__config-btn"]} onClick={handleIncrement}>+</button>
+    <div className={classes["config"]}>
+        <button type='button' className={classes["btn__config-add"]} onClick={handleIncrement}>+</button>
         <p>{quant}</p>
-        <button type='button' className={classes["book__config-btn"]} onClick={handleDecrement}>-</button>
+        <button type='button' className={classes["btn__config-sub"]} onClick={handleDecrement}>-</button>
     </div>
   )
 }
