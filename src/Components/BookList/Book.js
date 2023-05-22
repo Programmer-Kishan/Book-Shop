@@ -18,6 +18,7 @@ const Book = (props) => {
       bookId: props.id,
       title: props.title,
       price: props.price,
+      link: props.link,
       quantity: 1
     }
 

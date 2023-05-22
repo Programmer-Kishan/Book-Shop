@@ -14,7 +14,7 @@ function App() {
 
   return (
     <BookContextProvider>
-      <div className="dark-scheme fonts position">
+      <div className="dark-scheme fonts">
         {/* <Navbar isLogin={isLoggedIn} greetName={name} onLogout={handleLogout} /> */}
         <Navbar />
         {!ctx.isLoggedIn ? <Login /> : <BookList />}
