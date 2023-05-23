@@ -60,14 +60,21 @@ const ProductList = (props) => {
                 link = {ele.link}
             />
         })}
-        <p>Total: {getTotalAmount(ctx.bookList)}</p>
-        <Button 
-            type="button" 
-            onClick={() => props.onConfirm()} 
-            className={classes['product-button']}
-        >
-            Place Order
-        </Button>
+        {
+            ctx.bookList.length !== 0 ?
+            <>
+                <p>Total: ₹{getTotalAmount(ctx.bookList)}</p>
+                <Button 
+                    type="button" 
+                    onClick={() => props.onConfirm()} 
+                    className={classes['product-button']}
+                >
+                    Place Order
+                </Button>
+            </> 
+            :
+            <p>Cart is empty</p>
+        }
     </Card>
   )
 }
