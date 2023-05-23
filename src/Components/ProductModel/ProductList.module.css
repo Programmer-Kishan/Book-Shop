@@ -17,6 +17,17 @@
     font-family: var(--title);
 }
 
+.product-list p {
+    font-size: 1.8rem;
+    font-family: var(--small-title);
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.product-button {
+    background-color: var(--fa-sand);
+}
+
 .product-list::-webkit-scrollbar {
     width: 15px;
 }
@@ -88,4 +99,22 @@
     margin: 15px 0;
     font-family: var(--small-heading);
 }
+
+.product .add-btn {
+    font-size: 2rem;
+    padding: 2px 13px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
+
+.product .sub-btn {
+    font-size: 2rem;
+    padding: 2px 15px 4px;
+    margin: 0 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 

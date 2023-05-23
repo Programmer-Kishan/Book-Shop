@@ -13,7 +13,7 @@ const ProductModel = (props) => {
             document.getElementById('backdrop-root')
         )}
         {ReactDOM.createPortal(
-            <ProductList />,
+            <ProductList onConfirm={props.onConfirm}/>,
             document.getElementById('overlay-root')
         )}
     </>
