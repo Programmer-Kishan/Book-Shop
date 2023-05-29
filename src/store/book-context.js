@@ -3,22 +3,22 @@ import React, { useState, useReducer } from 'react';
 const listReducer = (state, action) => {
     if (action.type === 'add book') {
         state.push(action.val);
-        console.log(state);
+        // console.log(state);
         return state; 
     } else if (action.type === 'increment book') {
         console.log("incremented");
         state[action.index].quantity += 1;
-        console.log(state);
+        // console.log(state);
         return state;
     } else if (action.type === 'decrement book') {
         console.log("decremented");
         state[action.index].quantity -= 1;
-        console.log(state);
+        // console.log(state);
         return state;
     } else if (action.type === 'remove book') {
         console.log("Book Removed");
         state.splice(action.index, 1);
-        console.log(state);
+        // console.log(state);
         return state;
     }
 }
@@ -39,31 +39,31 @@ export const BookContextProvider = (props) => {
     const [list, dispatchList] = useReducer(listReducer, []);
 
     const bookClicked = (book) => {
-        console.log(book);
+        // console.log(book);
         dispatchList({type: "add book", val: book});
         setTotalBooks(prevState => prevState + 1);
-        console.log(totalBooks);
+        // console.log(totalBooks);
     }
 
     const incrementBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "increment book", index: ind});
         setTotalBooks(prevState => prevState + 1);
-        console.log(totalBooks);
+        // console.log(totalBooks);
     }
 
     const decrementBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "decrement book", index: ind});
         setTotalBooks(prevState => prevState - 1);
-        console.log(totalBooks);
+        // console.log(totalBooks);
     }
 
     const removeBook = (bookId) => {
         const ind = list.findIndex(ele => ele.bookId === bookId);
         dispatchList({type: "remove book", index: ind});
         setTotalBooks(prevState => prevState - 1);
-        console.log(totalBooks);
+        // console.log(totalBooks);
     }
 
     

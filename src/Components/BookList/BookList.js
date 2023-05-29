@@ -7,7 +7,7 @@ import classes from './BookList.module.css';
 
 const BookList = () => {
 
-    console.log(data);
+    // console.log(data);
 
   return (
     <div className={classes.books}>
