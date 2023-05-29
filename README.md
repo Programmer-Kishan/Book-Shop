@@ -38,6 +38,7 @@ npm start
 ![6](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/587aa02b-0db2-413c-b071-e562f05c5205)
 ![7](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/fb50696d-5562-4759-9d81-eb48a4430a15)
 ![8](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/b50f5a68-a757-443c-8798-ae10c2d36b48)
-
-## Video of the application
+![Screenshot (8)](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/c04ccbf7-0399-4e86-ad1d-120e9b1fedd1)
+![Screenshot (7)](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/6baa46bd-d114-4062-a765-4c2af0531826)
+![Screenshot (9)](https://github.com/Programmer-Kishan/Book-Shop/assets/69651170/d065c6cd-42c5-4853-b48b-de1c5b691f7b)
 
