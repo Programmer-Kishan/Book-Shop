@@ -51,17 +51,19 @@ const ProductList = (props) => {
     <Card className={classes["product-list"]}>
         <h1>Your List</h1>
         {ctx.bookList.map(ele => {
-            return <Product 
-                key = {ele.bookId}
-                id = {ele.bookId}
-                title = {ele.title}
-                price = {ele.price}                
-                quantity = {ele.quantity}
-                link = {ele.link}
-            />
+            if (ele.quantity !== 0) {
+                return <Product 
+                    key = {ele.bookId}
+                    id = {ele.bookId}
+                    title = {ele.title}
+                    price = {ele.price}                
+                    quantity = {ele.quantity}
+                    link = {ele.link}
+                />
+            }
         })}
         {
-            ctx.bookList.length !== 0 ?
+            ctx.totalBooks !== 0 ?
             <>
                 <p>Total: ₹{getTotalAmount(ctx.bookList)}</p>
                 <Button 

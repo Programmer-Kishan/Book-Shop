@@ -2,23 +2,26 @@ import React, { useState, useReducer } from 'react';
 
 const listReducer = (state, action) => {
     if (action.type === 'add book') {
-        state.push(action.val);
+        const books = state.map(book => book.title)
+        if (books.includes(action.val.title)) {
+            let index = state.findIndex(book => book.bookId === action.val.bookId)
+            state[index].quantity = 1;
+        } else {
+            state.push(action.val);
+        }
         // console.log(state);
         return state; 
     } else if (action.type === 'increment book') {
         console.log("incremented");
         state[action.index].quantity += 1;
-        // console.log(state);
         return state;
     } else if (action.type === 'decrement book') {
         console.log("decremented");
         state[action.index].quantity -= 1;
-        // console.log(state);
         return state;
     } else if (action.type === 'remove book') {
         console.log("Book Removed");
-        state.splice(action.index, 1);
-        // console.log(state);
+        state[action.index].quantity = 0;
         return state;
     }
 }

@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import classes from './Book.module.css';
 
 import Button from '../Helper/Button';
-import ProductConfig from './ProductConfig';
 import BookContext from '../../store/book-context';
 
 const Book = (props) => {
@@ -12,6 +11,23 @@ const Book = (props) => {
 
   const ctx = useContext(BookContext);
 
+  const currentBook = ctx.bookList.find(book => book.bookId === props.id)
+
+    const handleIncrement = () => {
+      ctx.onIncrement(props.id);
+      // setQuant(prevValue => prevValue + 1);
+    }
+
+    const handleDecrement = () => {
+      if (currentBook.quantity === 1) {
+        setIsAdded(false);
+        ctx.onRemove(props.id);
+      } else {
+        ctx.onDecrement(props.id);
+        // setQuant(prevValue => prevValue - 1);
+      }
+    }
+
   const handleClick = () => {
 
     const selectedBook = {
@@ -19,7 +35,7 @@ const Book = (props) => {
       title: props.title,
       price: props.price,
       link: props.link,
-      quantity: 1
+      quantity: 1,
     }
 
     ctx.addBook(selectedBook);
@@ -38,9 +54,16 @@ const Book = (props) => {
           {!isAdded ? 
             <Button type='submit' className={classes['book-btn']} onClick={handleClick}>Add to cart</Button>
             :
-            <ProductConfig id = {props.id} onRemove = {setIsAdded}/>
+            // <ProductConfig id = {props.id} onRemove = {setIsAdded}/>
+            <>
+              <div className={classes["config"]}>
+                <button type='button' className={classes["btn__config-add"]} onClick={handleIncrement}>+</button>
+                <p>{currentBook.quantity !== 0 ? currentBook.quantity : setIsAdded(false)}</p>
+                {/* <p>{currentBook.quantity}</p> */}
+                <button type='button' className={classes["btn__config-sub"]} onClick={handleDecrement}>-</button>
+              </div>
+            </>
           }
-          {/* <ProductConfig /> */}
         </div>
       </div>    
     </div>
